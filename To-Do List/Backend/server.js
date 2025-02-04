@@ -1,12 +1,14 @@
 //Using Express
 const express = require( 'express');
 const mongoose = require('mongoose');
+const cors = require("cors");
 
 //create an instance of express
 const app = express();
 
 //express middleware
 app.use(express.json());
+app.use(cors())
 
 // //Define a route
 // app.get('/',(req, res) => {
@@ -109,7 +111,7 @@ app.put('/todos/:id',async (req,res) => {
 })
 
 //start the server
-const port = 3000;
+const port = 8000;
 app.listen(port,() => {
     console.log("Server is Running on port "+port);
 })
